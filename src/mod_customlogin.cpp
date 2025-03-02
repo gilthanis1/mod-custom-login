@@ -584,7 +584,7 @@ public:
         }
     }
 
-    void OnPlayerLogout(Player *player)
+    void OnPlayerLogout(Player *player) override
     {
         if (LoginEnable)
         {
