@@ -59,6 +59,7 @@
 #include "GuildMgr.h"
 #include "Player.h"
 #include "ScriptMgr.h"
+#include "WorldSessionMgr.h"
 
 bool LoginEnable = 1;
 bool LoginAnnounceModule = 1;
@@ -572,13 +573,13 @@ public:
                 {
                     std::ostringstream ss;
                     ss << "|cffFFFFFF[|cff2897FF Alliance |cffFFFFFF]:|cff4CFF00 " << player->GetName() << "|cffFFFFFF has come online.";
-                    sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+                    sWorldSessionMgr->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
                 }
                 else
                 {
                     std::ostringstream ss;
                     ss << "|cffFFFFFF[|cffFF0000 Horde |cffFFFFFF]:|cff4CFF00 " << player->GetName() << "|cffFFFFFF has come online.";
-                    sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+                    sWorldSessionMgr->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
                 }
             }
         }
@@ -596,13 +597,13 @@ public:
                 {
                     std::ostringstream ss;
                     ss << "|cffFFFFFF[|cff2897FF Alliance |cffFFFFFF]|cff4CFF00 " << player->GetName() << "|cffFFFFFF has left the game.";
-                    sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+                    sWorldSessionMgr->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
                 }
                 else
                 {
                     std::ostringstream ss;
                     ss << "|cffFFFFFF[|cffFF0000 Horde |cffFFFFFF]|cff4CFF00 " << player->GetName() << "|cffFFFFFF has left the game.";
-                    sWorld->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
+                    sWorldSessionMgr->SendServerMessage(SERVER_MSG_STRING, ss.str().c_str());
                 }
             }
         }
